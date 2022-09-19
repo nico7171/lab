@@ -8,14 +8,23 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'My';
+  filePath : string = "";
+  fileName : string = "";
+  // file : any;
 
-  add(){
-    
+  fileSelected(event : any){
+    console.log(event.target.files[0]);
+    const file = event.target.files[0];
+    if(file){
+      this.fileName = file.name;
+      const formData = new FormData();
+      formData.append('thumbnail', file); //增加檔案
+    }
   }
 
-  upload(){
+  // fileUpload(){
     
-  }
+  // }
 
   download(){
 

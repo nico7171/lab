@@ -355,9 +355,23 @@
   <p></p>
 
   <div class="card-container">
-    <button type="button" class="btn btn-dark" (click)="add()">Add</button>
+    <!-- <button type="button" class="btn btn-dark" (click)="add($event)">Select File</button>
     <input type="fileName" name="fileName" id="fileName">
-    <button type="button" class="btn btn-dark" (click)="upload()">Upload</button>
+    <button type="button" class="btn btn-dark" (click)="upload()">Upload</button> -->
+
+    <input 
+      type="file" 
+      class="uploadInput" 
+      (change)="fileSelected($event)"
+      #fileUpload
+    />
+    <input 
+      type="text" 
+      class="viewInput" 
+      [placeholder] ="fileName ? fileName :'Please select a file'"
+    />
+    <button class="btn" (click)="fileUpload.click()">Upload</button>
+
   </div>
 
   <!-- Section 2 -->
@@ -367,10 +381,12 @@
   <div class="card-container">
     <table border="1">
       <tr>
+        <th>File Path</th>
         <th>File Name</th>
         <th>Action</th>
       </tr>
       <tr>
+        <td>{{fileName}}</td>
         <td></td>
         <td>
           <button type="button" class="btn btn-danger" (click)="download()">Download</button>
@@ -378,6 +394,7 @@
         </td>
       </tr>
       <tr>
+        <td></td>
         <td></td>
         <td>
           <button type="button" class="btn btn-danger" (click)="download()">Download</button>
