@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UploadService } from './service/upload.service';
 
 @Component({
   selector: 'app-root',
@@ -10,28 +11,32 @@ export class AppComponent {
   title = 'My';
   filePath : string = "";
   fileName : string = "";
-  // file : any;
+  file : any;
+  formData = new FormData();
 
-  fileSelected(event : any){
-    console.log(event.target.files[0]);
-    const file = event.target.files[0];
-    if(file){
-      this.fileName = file.name;
-      const formData = new FormData();
-      formData.append('thumbnail', file); //增加檔案
+  constructor(
+    private uploadService: UploadService
+  ){
+  
+  }
+
+  onFilechange(event: any) {
+    console.log(event.target.files[0])
+    this.file = event.target.files[0]
+    if(this.file){
+      this.fileName = this.file.name;
+      this.formData.append('file', this.file, this.fileName);
     }
   }
-
-  // fileUpload(){
-    
-  // }
-
-  download(){
-
-  }
-
-  delete(){
-    
+  
+  upload() {
+    if (this.file) {
+      this.uploadService.uploadfile(this.file).subscribe(resp => {
+        alert("Uploaded")
+      })
+    } else {
+      alert("Please select a file first")
+    }
   }
 
 }
