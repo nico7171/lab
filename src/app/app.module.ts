@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SuccessAlertComponent } from './success-alert/success-alert.component';
+import { WarningAlertComponet } from './warning-alert/warning-alert.components';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent, SuccessAlertComponent, WarningAlertComponet],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -18,6 +18,6 @@ import { AppComponent } from './app.component';
     HttpClientModule, // this is required for the actual http request
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
