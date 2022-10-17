@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <!-- <button class="btn btn-primary" (click)="showSecret = !showSecret">
+        Display Details
+      </button> -->
+      <button class="btn btn-primary" (click)="onToggleDetails()">
+        Show Details & count
+      </button>
+      <p *ngIf="showSecret">
+        The number color will be changed after you clicked the button more than
+        1 times.
+      </p>
+      <div
+        *ngFor="let logItem of log"
+        [ngStyle]="{ backgroundColor: logItem > 1 ? 'blue' : 'transparent' }"
+        [ngClass]="{ 'white-text': logItem > 1 }"
+      >
+        {{ logItem }}
+      </div>
+    </div>
+  </div>
+</div>
