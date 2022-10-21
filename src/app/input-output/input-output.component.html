@@ -1,0 +1,9 @@
+<app-student
+  [inputDefaultStudent]="newStudent"
+  (outputAddStudent)="getNewStudentFromStudentComponent($event)"
+></app-student>
+
+<div *ngFor="let s of student">
+  Name : <span [ngSwitch]="s.name">{{ s.name }}</span> Age :
+  <span [ngSwitch]="s.name">{{ s.age }}</span>
+</div>

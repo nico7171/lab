@@ -10,9 +10,11 @@ import { WarningAlertComponet } from './warning-alert/warning-alert.components';
 import { DataBindingComponent } from './data-binding/data-binding.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { HomeComponent } from './home/home.component';
+import { InputOutputComponent } from './input-output/input-output.component';
+import { StudentComponent } from './student/student.component';
 
 @NgModule({
-  declarations: [AppComponent, SuccessAlertComponent, WarningAlertComponet, DataBindingComponent, DirectivesComponent, HomeComponent],
+  declarations: [AppComponent, SuccessAlertComponent, WarningAlertComponet, DataBindingComponent, DirectivesComponent, HomeComponent, InputOutputComponent, StudentComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
