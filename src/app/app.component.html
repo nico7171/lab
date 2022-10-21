@@ -423,47 +423,13 @@
   </div>
 
   <div class="container">
-    <!-- Section Lab -->
-    <hr />
-    <label class="label">【Lab: Upload file example】</label>
-
-    <div class="row mt-5">
-      <div class="col-md-4">
-        <div class="mb-3">
-          <input
-            (change)="this.onFilechange($event)"
-            class="form-control"
-            type="file"
-            id="formFile"
-          />
-          <button
-            (click)="this.upload()"
-            type="button"
-            class="btn btn-primary mt-3"
-          >
-            Upload
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Section Component & Selector -->
-    <hr />
-    <label class="label">【Udemy course: Component & Selector】</label>
-    <div class="">
-      <app-warning-alert></app-warning-alert>
-      <app-success-alert></app-success-alert>
-    </div>
-
-    <!-- Section Data with Event Binding -->
-    <hr />
-    <label class="label">【Udemy course: Data with Event Binding】</label>
-    <app-data-binding></app-data-binding>
-
-    <!-- Section Directives -->
-    <hr />
-    <label class="label">【Udemy course: Directives】</label>
-    <app-directives></app-directives>
+    <!-- Section Routers -->
+    <ul>
+      <li><a [routerLink]="['./home']">Lab: Upload file example</a></li>
+      <li><a [routerLink]="['./link1']">Component & Selector</a></li>
+      <li><a [routerLink]="['./link2']">Data with Event Binding</a></li>
+      <li><a [routerLink]="['./link3']">Directives</a></li>
+    </ul>
 
     <!-- Footer -->
     <footer></footer>

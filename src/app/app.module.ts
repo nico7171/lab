@@ -9,9 +9,10 @@ import { SuccessAlertComponent } from './success-alert/success-alert.component';
 import { WarningAlertComponet } from './warning-alert/warning-alert.components';
 import { DataBindingComponent } from './data-binding/data-binding.component';
 import { DirectivesComponent } from './directives/directives.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
-  declarations: [AppComponent, SuccessAlertComponent, WarningAlertComponet, DataBindingComponent, DirectivesComponent],
+  declarations: [AppComponent, SuccessAlertComponent, WarningAlertComponet, DataBindingComponent, DirectivesComponent, HomeComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

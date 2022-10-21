@@ -1,10 +1,24 @@
+import { HomeComponent } from './home/home.component';
+import { DirectivesComponent } from './directives/directives.component';
+import { DataBindingComponent } from './data-binding/data-binding.component';
+import { SuccessAlertComponent } from './success-alert/success-alert.component';
+import { AppComponent } from './app.component';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Router, RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', component: HomeComponent, pathMatch: 'full' },
+  { path: '*', component: HomeComponent, pathMatch: 'full' },
+  { path: 'home', component: HomeComponent, pathMatch: 'full' },
+  { path: 'link1', component: SuccessAlertComponent, pathMatch: 'full' },
+  { path: 'link2', component: DataBindingComponent, pathMatch: 'full' },
+  { path: 'link3', component: DirectivesComponent, pathMatch: 'full' },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+  constructor() {}
+}
