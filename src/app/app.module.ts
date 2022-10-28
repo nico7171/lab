@@ -12,9 +12,12 @@ import { DirectivesComponent } from './directives/directives.component';
 import { HomeComponent } from './home/home.component';
 import { InputOutputComponent } from './input-output/input-output.component';
 import { StudentComponent } from './student/student.component';
+import { HooksComponent } from './hooks/hooks.component';
+import { RoutersComponent } from './routers/routers.component';
+import { ObservableComponent } from './observable/observable.component';
 
 @NgModule({
-  declarations: [AppComponent, SuccessAlertComponent, WarningAlertComponet, DataBindingComponent, DirectivesComponent, HomeComponent, InputOutputComponent, StudentComponent],
+  declarations: [AppComponent, SuccessAlertComponent, WarningAlertComponet, DataBindingComponent, DirectivesComponent, HomeComponent, InputOutputComponent, StudentComponent, HooksComponent, RoutersComponent, ObservableComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

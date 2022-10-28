@@ -1,0 +1,24 @@
+<p>routers works!</p>
+<hr />
+<ul>
+  <li><a [routerLink]="['./child1']">Child router 1</a></li>
+  <li><a [routerLink]="['./child2']">Child router 2</a></li>
+  <li>
+    Go to hooks component
+    <button class="btn btn-primary" (click)="onClick()">Navigater</button>
+  </li>
+  <li>
+    Reload
+    <button class="btn btn-primary" (click)="onReload()">Reload</button>
+  </li>
+  <li>
+    Show passing parameter 'id' & 'name'
+    <!--<button class="btn btn-primary" (click)="onFetchinngParam()">show</button>-->
+    <a [routerLink]="['/link6a', 10, 'Anna']">SHOW</a>
+    <p>{{ user.id }}</p>
+    <p>{{ user.name }}</p>
+  </li>
+</ul>
+
+<hr />
+<router-outlet></router-outlet>

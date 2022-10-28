@@ -424,13 +424,42 @@
 
   <div class="container">
     <!-- Section Routers -->
-    <ul>
-      <li><a [routerLink]="['./home']">Lab: Upload file example</a></li>
-      <li><a [routerLink]="['./link1']">Component & Selector</a></li>
-      <li><a [routerLink]="['./link2']">Data with Event Binding</a></li>
-      <li><a [routerLink]="['./link3']">Directives</a></li>
-      <li><a [routerLink]="['./link4']">Decorate - input & output</a></li>
-    </ul>
+    <table>
+      <tr>
+        <td>
+          <ul>
+            <li><a [routerLink]="['./home']">Lab: Upload file example</a></li>
+            <li><a [routerLink]="['./link1']">Component & Selector</a></li>
+            <li><a [routerLink]="['./link2']">Data with Event Binding</a></li>
+            <li>
+              <a [routerLink]="['./link3']"
+                >Directives - ngFor/ngClass/ngStyle</a
+              >
+            </li>
+            <li>
+              <a [routerLink]="['./link4']"
+                >Decorate - input & output EventEmitter</a
+              >
+            </li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li><a [routerLink]="['./link5']">Hooks</a></li>
+            <li><a [routerLink]="['./link6']">Roters</a></li>
+            <li>
+              <a [routerLink]="['./link7']"><!--13-->Observables</a>
+            </li>
+            <li>
+              <a [routerLink]="['./link8']"><!--15-->...</a>
+            </li>
+            <li>
+              <a [routerLink]="['./link9']"> <!--18-->...</a>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </table>
 
     <!-- Footer -->
     <footer></footer>
