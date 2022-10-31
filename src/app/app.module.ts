@@ -15,9 +15,10 @@ import { StudentComponent } from './student/student.component';
 import { HooksComponent } from './hooks/hooks.component';
 import { RoutersComponent } from './routers/routers.component';
 import { ObservableComponent } from './observable/observable.component';
+import { FormsComponent } from './forms/forms.component';
 
 @NgModule({
-  declarations: [AppComponent, SuccessAlertComponent, WarningAlertComponet, DataBindingComponent, DirectivesComponent, HomeComponent, InputOutputComponent, StudentComponent, HooksComponent, RoutersComponent, ObservableComponent],
+  declarations: [AppComponent, SuccessAlertComponent, WarningAlertComponet, DataBindingComponent, DirectivesComponent, HomeComponent, InputOutputComponent, StudentComponent, HooksComponent, RoutersComponent, ObservableComponent, FormsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

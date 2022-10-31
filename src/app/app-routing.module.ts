@@ -1,3 +1,4 @@
+import { FormsComponent } from './forms/forms.component';
 import { ObservableComponent } from './observable/observable.component';
 import { RoutersComponent } from './routers/routers.component';
 import { InputOutputComponent } from './input-output/input-output.component';
@@ -42,7 +43,7 @@ const routes: Routes = [
   },
   { path: 'link6a/:id/:name', component: RoutersComponent, pathMatch: 'full' },
   { path: 'link7', component: ObservableComponent, pathMatch: 'full' },
-  { path: 'link8', component: HomeComponent, pathMatch: 'full' },
+  { path: 'link8', component: FormsComponent, pathMatch: 'full' },
   { path: 'link9', component: HomeComponent, pathMatch: 'full' },
 ];
 

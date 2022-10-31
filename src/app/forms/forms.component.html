@@ -1,0 +1,22 @@
+<div>
+  {{ f.value | json }}
+  <form #f="ngForm">
+    <fieldset>
+      <input
+        type="text"
+        name="title"
+        placeholder="Article Title"
+        [(ngModel)]="title"
+      />
+    </fieldset>
+    <fieldset>
+      <input
+        type="text"
+        name="description"
+        placeholder="What's this article about?"
+        [(ngModel)]="description"
+      />
+    </fieldset>
+    <button type="button">submit</button>
+  </form>
+</div>
