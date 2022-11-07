@@ -16,17 +16,33 @@ import { HooksComponent } from './hooks/hooks.component';
 import { RoutersComponent } from './routers/routers.component';
 import { ObservableComponent } from './observable/observable.component';
 import { FormsComponent } from './forms/forms.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MaterialModule } from "./material.module";
 
 @NgModule({
-  declarations: [AppComponent, SuccessAlertComponent, WarningAlertComponet, DataBindingComponent, DirectivesComponent, HomeComponent, InputOutputComponent, StudentComponent, HooksComponent, RoutersComponent, ObservableComponent, FormsComponent],
+  declarations: [AppComponent,
+    SuccessAlertComponent,
+    WarningAlertComponet,
+    DataBindingComponent,
+    DirectivesComponent,
+    HomeComponent,
+    InputOutputComponent,
+    StudentComponent,
+    HooksComponent,
+    RoutersComponent,
+    ObservableComponent,
+    FormsComponent,],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule, // required for input file change detection
     ReactiveFormsModule,
-    HttpClientModule, // this is required for the actual http request
+    HttpClientModule,
+    BrowserAnimationsModule, // this is required for the actual http request
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

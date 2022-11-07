@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { NgModule } from '@angular/core';
 import { Router, RouterModule, Routes } from '@angular/router';
 import { HooksComponent } from './hooks/hooks.component';
+import { StudentComponent } from './student/student.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -44,7 +45,13 @@ const routes: Routes = [
   { path: 'link6a/:id/:name', component: RoutersComponent, pathMatch: 'full' },
   { path: 'link7', component: ObservableComponent, pathMatch: 'full' },
   { path: 'link8', component: FormsComponent, pathMatch: 'full' },
-  { path: 'link9', component: HomeComponent, pathMatch: 'full' },
+  { path: 'link9', component: StudentComponent, pathMatch: 'full' },
+  {
+    path: 'student-module',
+    loadChildren: () =>
+      import(`./student-module/student-module.module`).then((m) => m.StudentModuleModule),
+  },
+  { path: 's-moduel', redirectTo: 'student-moduel', pathMatch: 'full' },
 ];
 
 @NgModule({
@@ -52,5 +59,5 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class AppRoutingModule {
-  constructor() {}
+  constructor() { }
 }
