@@ -7,6 +7,7 @@ import { SlicePipe } from '@angular/common';
   providedIn: 'root'
 })
 export class studentService {
+  [x: string]: any;
 
   // name!: string;
   // age!: number;
@@ -15,7 +16,9 @@ export class studentService {
 
 
   // getAge!: (age: number) => number;
-  student: Student[] = [{ name: "Andy", age: 100 }];
+  student: Student[] = [{
+    name: "Andy", birthday: null, gender: "m", address: "this is my address", phone: "012345689", email: "andy@gmail.com"
+  }];
 
   //11-01
   students: BehaviorSubject<Student[]> = new BehaviorSubject<Student[]>([]);

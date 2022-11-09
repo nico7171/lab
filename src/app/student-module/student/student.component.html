@@ -1,0 +1,128 @@
+<!-- <p>Input new student info:</p> -->
+<!-- Name : <input type="text" [(ngModel)]="inputDefaultStudent.name" /> Age :
+<input type="text" [(ngModel)]="inputDefaultStudent.age" />
+<button (click)="addStudent()">add</button>
+
+Name : <input type="text"/> 
+Age :<input type="text" />
+<button (click)="addStudent()"> add</button>
+
+<div *ngFor="let s of stuList">
+    <span>{{ s.name }} </span>
+    <span>({{ s.age }} 歲)</span>
+</div>  -->
+
+
+<!-- <form [formGroup]="stuGroup" (ngSubmit)="addStudent()">
+  <label>
+    Name:
+    <input type="text" formControlName="name">
+  </label>
+  <label>
+    Age:
+    <input type="text" formControlName="age">
+  </label>
+  <button type="submit">add</button>
+
+  <div *ngFor="let s of (students$ | async)">
+    <span>{{ s.name }} </span>
+    <span>({{ s.age }} 歲)</span>
+  </div>
+</form> -->
+
+
+<form class="example-form" [formGroup]="stuGroup" (ngSubmit)="addStudent()">
+  <mat-toolbar color="primary">
+    <span>
+      <mat-icon>mood</mat-icon>
+    </span>
+    <span>Input new student info</span>
+  </mat-toolbar>
+
+  <mat-card>
+    <!-- input student info section -->
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="name" value="" formControlName="name">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Birthday</mat-label>
+      <input matInput [matDatepicker]="datepicker" datePickerFormat="YYYY/MM/DD" formControlName="birthday">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+      <mat-datepicker #datepicker></mat-datepicker>
+    </mat-form-field>
+    <div>
+      <mat-label>Choose a gender</mat-label>
+      <mat-button-toggle-group class="example-full-width" appearance="fill" name="fontStyle" aria-label="Font Style"
+        formControlName="gender">
+        <mat-button-toggle value="male">Male</mat-button-toggle>
+        <mat-button-toggle value="female">Female</mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Address</mat-label>
+      <input matInput placeholderaddress value="address" formControlName="address">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Phone</mat-label>
+      <input matInput placeholder="phone" value="phone" formControlName="phone">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Email</mat-label>
+      <input type="text" matInput formControlName="email" class="form-input-field"
+        pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" />
+      <mat-error *ngIf="stuGroup.get('email').hasError('required')">Email is required</mat-error>
+      <mat-error *ngIf="stuGroup.get('email').hasError('email')">Please enter a valid email address
+      </mat-error>
+    </mat-form-field>
+    <mat-divider></mat-divider>
+    <!-- submit button -->
+    <section>
+      <div class="example-button-row">
+        <button mat-raised-button color="primary">Add Student</button>
+      </div>
+    </section>
+    <mat-divider></mat-divider>
+    <!-- display all student info -->
+    <!-- <div *ngFor="let s of (students$ | async)">
+      <span>{{ s.name }} / </span>
+      <span>{{ s.birthday }} / </span>
+      <span>{{ s.gender }} / </span>
+      <span>{{ s.address }} / </span>
+      <span>{{ s.phone }} / </span>
+      <span>{{ s.email }}</span>
+    </div> -->
+    <!-- mat-table for student list -->
+    <table mat-table [dataSource]="(students$ | async)" class="mat-elevation-z8">
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+      <ng-container matColumnDef="birthday">
+        <th mat-header-cell *matHeaderCellDef> Birthday </th>
+        <td mat-cell *matCellDef="let element"> {{element.birthday | date:'MM/dd/yyyy'}} </td>
+      </ng-container>
+      <ng-container matColumnDef="gender">
+        <th mat-header-cell *matHeaderCellDef> Gender </th>
+        <td mat-cell *matCellDef="let element">{{element.gender}} </td>
+      </ng-container>
+      <ng-container matColumnDef="address">
+        <th mat-header-cell *matHeaderCellDef> Address </th>
+        <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+      </ng-container>
+      <ng-container matColumnDef="phone">
+        <th mat-header-cell *matHeaderCellDef> Phone </th>
+        <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+      </ng-container>
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+      <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+    </table>
+
+  </mat-card>
+</form>

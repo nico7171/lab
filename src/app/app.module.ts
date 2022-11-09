@@ -11,7 +11,7 @@ import { DataBindingComponent } from './data-binding/data-binding.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { HomeComponent } from './home/home.component';
 import { InputOutputComponent } from './input-output/input-output.component';
-import { StudentComponent } from './student/student.component';
+import { StudentComponent } from './student-module/student/student.component';
 import { HooksComponent } from './hooks/hooks.component';
 import { RoutersComponent } from './routers/routers.component';
 import { ObservableComponent } from './observable/observable.component';
@@ -28,7 +28,7 @@ import { MaterialModule } from "./material.module";
     DirectivesComponent,
     HomeComponent,
     InputOutputComponent,
-    StudentComponent,
+    //StudentComponent,
     HooksComponent,
     RoutersComponent,
     ObservableComponent,

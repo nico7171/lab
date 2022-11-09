@@ -1,31 +1,35 @@
-import { Component, OnInit, Input, Output, EventEmitter, Injectable, ChangeDetectionStrategy, NgModule } from '@angular/core'; //import Input Module
-import { TitleStrategy } from '@angular/router';
-import { Student } from '../model/student.model';
-import { studentService } from '../service/student.service';
-import { FormControl, FormGroup } from '@angular/forms'
+import { Component, OnInit, NgModule } from '@angular/core';
+import { Student } from '../../model/student.model';
+import { studentService } from '../../service/student.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms'
 import { interval, Observable } from 'rxjs';
+import { DatePipe } from '@angular/common';
+import { MatTableDataSource } from '@angular/material/table';
 
 
 @Component({
   selector: 'app-student',
   templateUrl: './student.component.html',
   styleUrls: ['./student.component.scss'],
-  //changeDetection: ChangeDetectionStrategy.OnPush //11-01
+  providers: [DatePipe]
 })
 
-// @NgModule({ imports: [BrowserAnimationsModule], })
 export class StudentComponent implements OnInit {
-  // @Output() outputAddStudent = new EventEmitter<any>(); //@Output decorate can output data from events.
-  // @Input() inputDefaultStudent: any; //@Input decorate can get outter data.
 
   stuGroup = new FormGroup({
     name: new FormControl(''),
-    age: new FormControl('')
+    birthday: new FormControl(),
+    gender: new FormControl(''),
+    address: new FormControl(''),
+    phone: new FormControl(''),
+    email: new FormControl('', [Validators.required, Validators.email])
   });
 
   // stuService : studentService;
   stuList: any[] = [];
   students$: Observable<Student[]> //11-01
+  columnsToDisplay = ['name', 'birthday', 'gender', 'address', 'phone', 'email']; //todo
+  stuDataSource = new MatTableDataSource<any>();
 
   constructor(private stuService: studentService) {
     //this.stuService = stuService;
@@ -33,18 +37,13 @@ export class StudentComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // console.log('@Input decorate can get outter data');
-    // console.log(this.inputDefaultStudent);
     //this.stuList = this.stuService.getStudent();
     this.students$ = this.stuService.students$;
     console.log(this.stuList);
+
   }
 
   addStudent() {
-    // console.log('@Output decorate can send the data out');
-    // this.outputAddStudent.emit(this.inputDefaultStudent);
-    // this.inputDefaultStudent = { name: '', age: '' };
-
     // const newName: string = !this.stuGroup.value.name ? "" : this.stuGroup.value.name
     // const newAge: number = !this.stuGroup.value.age ? 0 : Number(this.stuGroup.value.age)
     // const newStudent: any = !this.stuGroup.value ? { name: '', age: '' } : this.stuGroup.value

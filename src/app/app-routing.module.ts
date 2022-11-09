@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { NgModule } from '@angular/core';
 import { Router, RouterModule, Routes } from '@angular/router';
 import { HooksComponent } from './hooks/hooks.component';
-import { StudentComponent } from './student/student.component';
+import { StudentComponent } from './student-module/student/student.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -51,7 +51,7 @@ const routes: Routes = [
     loadChildren: () =>
       import(`./student-module/student-module.module`).then((m) => m.StudentModuleModule),
   },
-  { path: 's-moduel', redirectTo: 'student-moduel', pathMatch: 'full' },
+  { path: 's-module', redirectTo: 'student-moduel', pathMatch: 'full' },
 ];
 
 @NgModule({
