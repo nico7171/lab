@@ -19,6 +19,7 @@ import { FormsComponent } from './forms/forms.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MaterialModule } from "./material.module";
+import { SidenavComponent } from './sidenav/sidenav.component';
 
 @NgModule({
   declarations: [AppComponent,
@@ -32,7 +33,8 @@ import { MaterialModule } from "./material.module";
     HooksComponent,
     RoutersComponent,
     ObservableComponent,
-    FormsComponent,],
+    FormsComponent,
+    SidenavComponent,],
   imports: [
     BrowserModule,
     AppRoutingModule,
